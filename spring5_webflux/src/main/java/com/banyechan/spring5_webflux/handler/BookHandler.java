@@ -8,6 +8,7 @@ import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -35,9 +36,14 @@ public class BookHandler {
         tem.setPrice(66.66);
         tem.setCreateTime(new Date());
         // Mono<Book> result = Mono.just(tem);
-
         return ServerResponse.ok().contentType(MediaType.APPLICATION_JSON).body(Mono.just(tem), Object.class);
+    }
 
+    public Mono<ServerResponse> sendMessage(ServerRequest serverRequest) {
+        int i = 0;
+        String message = "这是第" + i + "次发送信息";
+        return ServerResponse.ok().contentType(MediaType.TEXT_EVENT_STREAM)
+                .body(Flux.interval(Duration.ofSeconds(5)).map(s -> message), Object.class);
     }
 
 

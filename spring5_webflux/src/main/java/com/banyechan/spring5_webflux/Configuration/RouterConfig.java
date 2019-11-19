@@ -21,7 +21,8 @@ public class RouterConfig {
     @Bean
     public RouterFunction<ServerResponse> bookRouter() {
         return route(RequestPredicates.GET("/book"), bookHandler::getBook)
-                .andRoute(RequestPredicates.GET("/LIST"), bookHandler::bookList);
+                .andRoute(RequestPredicates.GET("/list"), bookHandler::bookList)
+                .andRoute(RequestPredicates.GET("/send"), bookHandler::sendMessage);
     }
 
 
