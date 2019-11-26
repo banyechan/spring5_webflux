@@ -28,6 +28,16 @@ public class BuddhistScripture {
             "因嫌纱帽小，致使锁枷杠。昨怜破袄寒，今嫌紫蟒长。乱哄哄，你方唱罢我登场，反认他乡是故乡，" +
             "甚荒唐，到头来都是为他人作嫁衣裳。";
 
+    private final static String Chun_jiang_hua_yue_ye = "《春江花月夜》" +
+            "春江潮水连海平，海上明月共潮生。" +
+            "滟滟随波千万里，何处春江无月明；" +
+            "江流宛转绕芳甸，月照花林皆似霰。" +
+            "空里流霜不觉飞，汀上白沙看不见。";
+
+
+
+
+
     public static void main(String[] args) {
         System.out.println(XIN_JING);
     }
